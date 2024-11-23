@@ -1,33 +1,28 @@
-interface Drivable {
-    drive(): void;
+interface ElectricVehicle{
+    chargeBattery(): string;
 }
 
-abstract class Vehicle {
-    abstract startEngine(): string
-    
-    move(): string{
-        return "Vehicle is moving"
+abstract class Vehicle{
+    abstract startEngine(): string;
+    move():string{
+        return "Vehicle is moving";
     }
 }
 
-class Car extends Vehicle implements Drivable{
+class ElectricCar extends Vehicle implements ElectricVehicle{
     startEngine(): string {
-        return "Car engine started"
+        return "Electric car engine started"
     }
 
-    drive(): void {
-        console.log("Car is driving");
-    }
-}
-
-class Bicycle implements Drivable{
-    drive(): void {
-        console.log("Bicycle is being ridden");
+    chargeBattery(): string {
+        return "Electric car battery is charging"
     }
 }
 
-const myCar = new Car();
-const myBicycle = new Bicycle();
+const myElectricCar = new ElectricCar();
 
-myCar.drive();
-myBicycle.drive();
+console.log(myElectricCar.startEngine());
+console.log(myElectricCar.move());
+console.log(myElectricCar.chargeBattery());
+
+

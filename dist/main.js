@@ -4,20 +4,15 @@ class Vehicle {
         return "Vehicle is moving";
     }
 }
-class Car extends Vehicle {
+class ElectricCar extends Vehicle {
     startEngine() {
-        return "Car engine started";
+        return "Electric car engine started";
     }
-    drive() {
-        console.log("Car is driving");
-    }
-}
-class Bicycle {
-    drive() {
-        console.log("Bicycle is being ridden");
+    chargeBattery() {
+        return "Electric car battery is charging";
     }
 }
-const myCar = new Car();
-const myBicycle = new Bicycle();
-myCar.drive();
-myBicycle.drive();
+const myElectricCar = new ElectricCar();
+console.log(myElectricCar.startEngine());
+console.log(myElectricCar.move());
+console.log(myElectricCar.chargeBattery());
